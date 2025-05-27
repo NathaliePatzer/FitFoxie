@@ -1,8 +1,12 @@
+import 'package:fitfoxie/widgets/caloriasDefault.dart';
+import 'package:fitfoxie/widgets/imcDefault.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Results extends StatelessWidget {
   const Results({super.key});
+
+final double imc = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +32,8 @@ class Results extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              height: 200,
-              width: 300,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.inverseSurface,
-                borderRadius: BorderRadius.circular(30),
-              ),
-            ),
-            Container(
-              height: 200,
-              width: 300,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.inverseSurface,
-                borderRadius: BorderRadius.circular(30),
-              ),
-            ),
+            Imcdefault(),
+            Caloriasdefault(),
           ],
         ),
       ),
