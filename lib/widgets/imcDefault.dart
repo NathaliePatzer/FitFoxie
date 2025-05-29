@@ -41,7 +41,7 @@ class Imcdefault extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/results");
+                Navigator.pushNamed(context, "/imcResult");
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all<Color>(
