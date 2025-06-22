@@ -6,11 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Results extends StatelessWidget {
-  const Results({super.key});
+  double imc;
+  double calorias;
 
-  final double imc = 1.2;
-  final double calorias = 12537;
-
+  Results({required this.imc, required this.calorias});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +34,15 @@ class Results extends StatelessWidget {
                 ),
               ],
             ),
-            Container(child: imc <=0 ? Imcdefault() : Imcresult(resultadoImc: imc,)),
-            Container(child: calorias <=0 ? Caloriasdefault() : Caloriasresult(resultadoCalorias: calorias,)),
+            Container(
+              child: imc <= 0 ? Imcdefault(calorias: calorias,) : Imcresult(resultadoImc: imc),
+            ),
+            Container(
+              child:
+                  calorias <= 0
+                      ? Caloriasdefault(imc: imc,)
+                      : Caloriasresult(resultadoCalorias: calorias),
+            ),
           ],
         ),
       ),

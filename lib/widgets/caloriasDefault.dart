@@ -1,8 +1,10 @@
+import 'package:fitfoxie/pages/caloriasForm.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Caloriasdefault extends StatelessWidget {
-  const Caloriasdefault({super.key});
+  double imc;
+  Caloriasdefault({required this.imc});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,14 @@ class Caloriasdefault extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/results");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) =>
+                            CaloriasForm(imc: imc),
+                  ),
+                );
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all<Color>(

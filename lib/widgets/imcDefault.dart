@@ -1,8 +1,10 @@
+import 'package:fitfoxie/pages/imcForm.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Imcdefault extends StatelessWidget {
-  const Imcdefault({super.key});
+  double calorias;
+  Imcdefault({required this.calorias});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,14 @@ class Imcdefault extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/imcResult");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) =>
+                            ImcForm(calorias: calorias),
+                  ),
+                );
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all<Color>(

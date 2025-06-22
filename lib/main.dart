@@ -1,4 +1,6 @@
+import 'package:fitfoxie/pages/caloriasForm.dart';
 import 'package:fitfoxie/pages/home.dart';
+import 'package:fitfoxie/pages/imcForm.dart';
 import 'package:fitfoxie/pages/results.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +29,9 @@ class MyApp extends StatelessWidget {
       home: Home(),
       routes: {
         '/home': (context) => Home(),
-        '/results': (context) => Results(),
+        '/results': (context) => Results(imc: 0.0,calorias: 0.0),
+        //'/imcForm': (context) => ImcForm(),
+        //'/caloriasForm': (context) => CaloriasForm(),
       },
     );
   }
