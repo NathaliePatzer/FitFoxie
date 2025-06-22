@@ -21,7 +21,7 @@ class Caloriasresult extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 25, top: 15, right: 25, bottom: 10),
             child: Text(
-              "Calorias R",
+              "Calorias",
               style: GoogleFonts.robotoMono(
                 color: Theme.of(context).colorScheme.surface,
                 fontSize: 24,

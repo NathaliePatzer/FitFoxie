@@ -32,7 +32,9 @@ class ImcForm extends StatelessWidget {
 
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Results(imc: imc, calorias: calorias,)),
+        MaterialPageRoute(
+          builder: (context) => Results(imc: imc, calorias: calorias),
+        ),
       );
     } else {
       showDialog(

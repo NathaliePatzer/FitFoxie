@@ -14,6 +14,20 @@ class Imcresult extends StatelessWidget {
     "Obesidade grau II",
   ];
 
+  String obterDescricaoImc(double imc) {
+    if (imc < 18.5) {
+      return "Abaixo do peso";
+    } else if (imc < 25) {
+      return "Peso normal";
+    } else if (imc < 30) {
+      return "Acima do peso";
+    } else if (imc < 35) {
+      return "Obesidade grau I";
+    } else {
+      return "Obesidade grau II";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,7 +66,7 @@ class Imcresult extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 15, top: 0, right: 15, bottom: 15),
             child: Text(
-              "Peso normal",
+              obterDescricaoImc(resultadoImc),
               textAlign: TextAlign.center,
               style: GoogleFonts.robotoMono(
                 color: Theme.of(context).colorScheme.secondary,
