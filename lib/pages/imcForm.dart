@@ -34,6 +34,23 @@ class ImcForm extends StatelessWidget {
         context,
         MaterialPageRoute(builder: (context) => Results(imc: imc, calorias: calorias,)),
       );
+    } else {
+      showDialog(
+        context: context,
+        builder:
+            (_) => AlertDialog(
+              title: const Text('Erro'),
+              content: const Text(
+                'Por favor, preencha todos os campos corretamente.',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('OK'),
+                ),
+              ],
+            ),
+      );
     }
   }
 

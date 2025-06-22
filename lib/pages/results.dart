@@ -35,13 +35,46 @@ class Results extends StatelessWidget {
               ],
             ),
             Container(
-              child: imc <= 0 ? Imcdefault(calorias: calorias,) : Imcresult(resultadoImc: imc),
+              child:
+                  imc <= 0
+                      ? Imcdefault(calorias: calorias)
+                      : Imcresult(resultadoImc: imc),
             ),
             Container(
               child:
                   calorias <= 0
-                      ? Caloriasdefault(imc: imc,)
+                      ? Caloriasdefault(imc: imc)
                       : Caloriasresult(resultadoCalorias: calorias),
+            ),
+
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/results");
+              },
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all<Color>(
+                  Theme.of(context).colorScheme.primary,
+                ),
+                padding: WidgetStateProperty.all<EdgeInsets>(
+                  EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
+                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                ),
+                overlayColor: WidgetStateProperty.all<Color>(
+                  Theme.of(context).colorScheme.secondary,
+                ),
+              ),
+              child: Text(
+                "Calcular novamente",
+                style: GoogleFonts.robotoMono(
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

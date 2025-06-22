@@ -30,8 +30,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => Home(),
         '/results': (context) => Results(imc: 0.0,calorias: 0.0),
-        //'/imcForm': (context) => ImcForm(),
-        //'/caloriasForm': (context) => CaloriasForm(),
       },
     );
   }

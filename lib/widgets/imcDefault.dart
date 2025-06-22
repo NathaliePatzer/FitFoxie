@@ -70,9 +70,10 @@ class Imcdefault extends StatelessWidget {
               ),
               child: Text(
                 "Vamos!",
-                style: TextStyle(
+                style: GoogleFonts.robotoMono(
                   color: Theme.of(context).colorScheme.inverseSurface,
                   fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
